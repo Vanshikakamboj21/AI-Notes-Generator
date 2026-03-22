@@ -67,7 +67,7 @@ Notes can be exported as PDF 📄
 🌍 Live Demo
 
 🚀 Live Demo  
-👉 https://examnotesaiclinet.onrender.com
+👉 https://ai-notes-generatorclinet.onrender.com
 
 📦 Installation (Local Setup)
 git clone https://github.com/your-username/ExamNotesAI.git
