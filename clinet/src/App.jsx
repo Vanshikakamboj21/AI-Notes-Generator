@@ -11,7 +11,7 @@ import Pricing from './pages/Pricing'
 import History from './pages/History'
 import PaymentSuccess from './pages/PaymentSuccess'
 import PaymentFailer from './pages/PaymentFailer'
-export const serverUrl="https://examnotesai-c5qn.onrender.com"
+export const serverUrl="https://ai-notes-generatorserver-ow0h.onrender.com"
 
 function App() {
   const dispatch=useDispatch()
