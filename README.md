@@ -65,7 +65,5 @@ AI generates structured notes 🧠
 Notes can be exported as PDF 📄
 
 🌍 Live Demo
-
-🚀 Live Demo  
 👉 https://ai-notes-generatorclinet.onrender.com
 
