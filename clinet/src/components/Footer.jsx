@@ -136,7 +136,7 @@ function Footer() {
         <p className="text-gray-400">
   Made with ❤️ by{" "}
   <a
-    href="https://www.linkedin.com/in/tushar-singh-068426257/"
+    href="www.linkedin.com/in/vanshika-kamboj-84517b252"
     target="_blank"
     rel="noopener noreferrer"
     className="text-white hover:underline"
