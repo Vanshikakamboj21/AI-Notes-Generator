@@ -58,9 +58,9 @@ function Footer() {
 
           <div className="flex gap-4 mt-2">
   {[
-    { icon: FaGithub, link: "https://github.com/Tushar-Rajput9520" },
-    { icon: FaLinkedin, link: "https://www.linkedin.com/in/tushar-singh-068426257/" },
-    { icon: FaInstagram, link: "https://www.instagram.com/tushar_rajput_._._/" },
+    { icon: FaGithub, link: "https://github.com/Vanshikakamboj21" },
+    { icon: FaLinkedin, link: "https://www.linkedin.com/in/vanshika-kamboj-84517b252" },
+    { icon: FaInstagram, link: "https://www.instagram.com/vanshika.kamboj_?igsh=MXN5NjR3eWZoMWVmaA==" },
   ].map((item, i) => {
     const Icon = item.icon;
     return (
@@ -116,7 +116,7 @@ function Footer() {
 
           <ul className="space-y-3 text-sm text-gray-300">
             <li>support@examnotes.ai</li>
-            <li>+91 9520554564</li>
+            <li>+91 9991785137</li>
             <li>India</li>
           </ul>
         </motion.div>
@@ -141,7 +141,7 @@ function Footer() {
     rel="noopener noreferrer"
     className="text-white hover:underline"
   >
-    Tushar Singh
+    Vanshika Kamboj
   </a>
 </p>
 
