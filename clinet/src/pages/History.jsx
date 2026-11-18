@@ -116,6 +116,7 @@ function History() {
               <GiHamburgerMenu />
             </motion.button>
           )}
+          {/*
 
           <motion.button
             whileHover={{ scale: 1.08 }}
@@ -126,7 +127,7 @@ function History() {
             💎 {credits}
           </motion.button>
         </div>
-      </motion.header>
+      </motion.header> */}
 
       {/* ---------------- GRID ---------------- */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
