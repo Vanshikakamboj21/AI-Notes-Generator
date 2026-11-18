@@ -1,3 +1,4 @@
+
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { serverUrl } from "../App";
@@ -28,11 +29,13 @@ function History() {
           serverUrl + "/api/notes/getnotes",
           { withCredentials: true }
         );
+
         setTopics(Array.isArray(res.data) ? res.data : []);
       } catch (error) {
         console.log("Fetch Notes Error:", error);
       }
     };
+
     myNotes();
   }, []);
 
@@ -70,7 +73,9 @@ function History() {
     };
 
     handleResize();
+
     window.addEventListener("resize", handleResize);
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -84,6 +89,7 @@ function History() {
         transition={{ duration: 0.6 }}
         className="mb-6 sm:mb-10 rounded-2xl bg-black/80 backdrop-blur-xl border border-white/10 px-4 sm:px-8 py-4 sm:py-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 shadow-[0_20px_45px_rgba(0,0,0,0.6)]"
       >
+
         {/* Logo */}
         <div
           onClick={() => navigate("/")}
@@ -94,10 +100,12 @@ function History() {
             alt="examnotes"
             className="w-8 h-8 sm:w-9 sm:h-9 object-contain"
           />
+
           <div>
             <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
               ExamNotes <span className="text-gray-400">AI</span>
             </h1>
+
             <p className="text-[10px] sm:text-xs text-gray-300 -mt-1">
               AI powered exam-oriented notes & revision
             </p>
@@ -106,6 +114,7 @@ function History() {
 
         {/* Buttons */}
         <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+
           {!isSidebarOpen && (
             <motion.button
               whileHover={{ scale: 1.08 }}
@@ -116,8 +125,8 @@ function History() {
               <GiHamburgerMenu />
             </motion.button>
           )}
-          {/*
 
+          {/* Credits */}
           <motion.button
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
@@ -126,8 +135,9 @@ function History() {
           >
             💎 {credits}
           </motion.button>
+
         </div>
-      </motion.header> */}
+      </motion.header>
 
       {/* ---------------- GRID ---------------- */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -147,7 +157,11 @@ function History() {
               initial={{ x: -320 }}
               animate={{ x: 0 }}
               exit={{ x: -320 }}
-              transition={{ type: "spring", stiffness: 260, damping: 30 }}
+              transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 30,
+              }}
               className="
                 fixed lg:static
                 inset-y-0 left-0
@@ -163,6 +177,7 @@ function History() {
                 overflow-y-auto
               "
             >
+
               <button
                 onClick={() => setIsSidebarOpen(false)}
                 className="lg:hidden text-white mb-4"
@@ -183,7 +198,43 @@ function History() {
                 📜 Your Notes
               </h2>
 
-              <ul className="space-y-3"> {topics.map((t) => ( <li key={t._id} onClick={() => openNote(t._id)} className="cursor-pointer rounded-xl p-3 bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-200" > <p className="text-sm font-semibold text-white"> {t.topic} </p> <div className="flex flex-wrap gap-2 mt-2 text-xs"> {t.classLevel && ( <span className="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300"> 🎓 Class: {t.classLevel} </span> )} {t.examType && ( <span className="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300"> 📝 {t.examType} </span> )} </div> <div className="flex gap-3 mt-2 text-xs text-gray-300"> {t.revisionMode && <span>⚡ Revision</span>} {t.includeDiagram && <span>📊 Diagram</span>} {t.includeChart && <span>📈 Chart</span>} </div> </li> ))} </ul>
+              <ul className="space-y-3">
+                {topics.map((t) => (
+                  <li
+                    key={t._id}
+                    onClick={() => openNote(t._id)}
+                    className={`cursor-pointer rounded-xl p-3 border transition-all duration-200 ${
+                      activeId === t._id
+                        ? "bg-white/15 border-white/30"
+                        : "bg-white/5 border-white/10 hover:bg-white/10"
+                    }`}
+                  >
+                    <p className="text-sm font-semibold text-white">
+                      {t.topic}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mt-2 text-xs">
+                      {t.classLevel && (
+                        <span className="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300">
+                          🎓 Class: {t.classLevel}
+                        </span>
+                      )}
+
+                      {t.examType && (
+                        <span className="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300">
+                          📝 {t.examType}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="flex gap-3 mt-2 text-xs text-gray-300">
+                      {t.revisionMode && <span>⚡ Revision</span>}
+                      {t.includeDiagram && <span>📊 Diagram</span>}
+                      {t.includeChart && <span>📈 Chart</span>}
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           )}
         </AnimatePresence>
@@ -195,6 +246,7 @@ function History() {
           transition={{ duration: 0.6 }}
           className="lg:col-span-3 rounded-xl sm:rounded-2xl bg-white shadow-[0_15px_40px_rgba(0,0,0,0.15)] p-4 sm:p-6 min-h-[60vh] sm:min-h-[75vh]"
         >
+
           {loading && (
             <div className="flex items-center justify-center h-full">
               <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-indigo-600"></div>
@@ -206,6 +258,7 @@ function History() {
               <p className="text-base sm:text-lg">
                 Select a topic from the Sidebar
               </p>
+
               <p className="text-sm mt-2">
                 Your note will appear here ✨
               </p>
@@ -215,8 +268,8 @@ function History() {
           {!loading && selectedNote && (
             <FinalResult result={selectedNote} />
           )}
-        </motion.div>
 
+        </motion.div>
       </div>
     </div>
   );
