@@ -50,6 +50,7 @@ function Notes() {
         {/* HEADER BUTTONS */}
         <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
           {/* CREDIT BUTTON */}
+          {/*
           <motion.button
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
@@ -66,7 +67,7 @@ function Notes() {
             >
               ➕
             </motion.span>
-          </motion.button>
+          </motion.button> */}
 
           {/* HISTORY BUTTON */}
           <motion.button
