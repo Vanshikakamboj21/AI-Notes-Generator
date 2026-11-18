@@ -9,7 +9,7 @@ function Home() {
   const navigate=useNavigate()
   return (
     <div className="min-h-screen overflow-hidden bg-white text-black">
-      <Navbar />
+      <Navbar hideCredits />
 
       <section className="max-w-7xl mx-auto px-8 pt-32 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div>
