@@ -53,7 +53,7 @@ function Navbar() {
     <div className="flex items-center gap-4">
 
       {/* Credits */}
-      <div className="relative">
+      {/* <div className="relative">
         <motion.div
           onClick={() => {
             setShowCredits(!showCredits);
@@ -107,7 +107,7 @@ function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
+      </div> */}
 
       {/* Profile */}
       <div className="relative">
